@@ -6,13 +6,13 @@
   <title>Remarcable Website – Redesign Proposal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fff;
-      --text: #12385E;
+      --text: #09223C;
       --text-muted: #4a657a;
-      --highlight: #236499;
+      --highlight: #12385E;
       --line: #d4dce4;
       --max-width: 52rem;
     }
@@ -22,7 +22,7 @@
     *::after { box-sizing: border-box; }
 
     html {
-      font-size: 15px;
+      font-size: 14.5px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -100,7 +100,7 @@
 
     h2 {
       font-size: 1.2rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--text);
@@ -132,13 +132,13 @@
     }
 
     li {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.6em;
     }
 
     li:last-child { margin-bottom: 0; }
 
     strong {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--highlight);
     }
 
@@ -162,7 +162,7 @@
     }
 
     th {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
     }
 
@@ -171,9 +171,9 @@
     tr:last-child td,
     tr:last-child th { border-bottom: none; }
 
-    .price { font-weight: 600; color: var(--text); }
+    .price { font-weight: 700; color: var(--text); }
 
-    .total-row td { padding-top: 1rem; font-weight: 600; color: var(--text); }
+    .total-row td { padding-top: 1rem; font-weight: 700; color: var(--text); }
 
     table strong { color: var(--highlight); }
 
@@ -201,11 +201,11 @@
 
     .cta p + p { margin-top: 0.75rem; }
 
-    .cta strong { font-weight: 600; color: inherit; }
+    .cta strong { font-weight: 700; color: inherit; }
 
     /* Footer */
     footer {
-      padding: 2rem 0 3rem;
+      padding: 2rem 0 calc(3rem + 20px);
       font-size: 0.875rem;
       color: var(--text-muted);
     }
@@ -213,7 +213,7 @@
     footer p { margin: 0; }
 
     @media (max-width: 640px) {
-      html { font-size: 15px; }
+      html { font-size: 14.5px; }
       header { padding: 2rem 0 1.5rem; }
       .logo { height: 3rem; padding-top: 1.25rem; }
       main > section:first-child { padding-top: 2rem; }
