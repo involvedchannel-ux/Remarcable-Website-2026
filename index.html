@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remarcable Website – Redesign Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #111;
+      --text-muted: #444;
+      --line: #ddd;
+      --max-width: 52rem;
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html {
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      display: block;
+      height: 2.5rem;
+      width: auto;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin: 0 0 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    h3:first-child { margin-top: 0; }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 1rem;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    li:last-child { margin-bottom: 0; }
+
+    strong { font-weight: 600; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.6rem 0.75rem 0.6rem 0;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    td { color: var(--text-muted); }
+
+    tr:last-child td,
+    tr:last-child th { border-bottom: none; }
+
+    .price { font-weight: 600; color: var(--text); }
+
+    .total-row td { padding-top: 1rem; font-weight: 600; color: var(--text); }
+
+    /* CTA / Quote */
+    .cta {
+      padding: 2.5rem 0 3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta-inner {
+      padding: 1.75rem 1.5rem;
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .cta p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: inherit;
+    }
+
+    .cta p + p { margin-top: 0.75rem; }
+
+    .cta strong { font-weight: 600; }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0 3rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+      header { padding: 2rem 0 1.5rem; }
+      section { padding: 1.75rem 0; }
+      th, td { padding-right: 0.5rem; font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <img src="remarcable_design_logo.png" alt="Remarcable Design" class="logo">
+    <h1>Website Redesign Proposal</h1>
+    <p class="subtitle">Context, scope, information architecture, process & investment</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>1. Context & intent</h2>
+      <p>Remarcable’s current site already carries a strong <strong>visual identity</strong>: large photography, generous white space, and a gallery-like calm that fits a premium interior design studio. The goal of this project is <strong>not</strong> to erase that identity, but to <strong>refine and re‑orchestrate it</strong> so the site better reflects:</p>
+      <ul>
+        <li>Your <strong>human-centric, psychology-driven design philosophy</strong>.</li>
+        <li>Your three core <strong>segments</strong>: <strong>Healthcare</strong>, <strong>Workspaces</strong>, and <strong>Homes</strong>.</li>
+        <li>Your desire to <strong>nurture relationships over time</strong>, not just capture “ready to buy” visitors.</li>
+      </ul>
+      <p>The redesign will focus where it matters most, through an iterative process with you at each step. The outcome: a <strong>cleaner, more conversion-focused, easier-to-manage</strong> experience, ready for Webflow.</p>
+    </section>
+
+    <section class="container">
+      <h2>2. High-level scope</h2>
+      <h3>Website purpose</h3>
+      <ul>
+        <li>Serve as a <strong>calm, premium gallery</strong> of your work and philosophy.</li>
+        <li><strong>Nurture leads</strong>: keep Remarcable top-of-mind through content (blog, guides, tools).</li>
+        <li><strong>Support decision-making</strong>: give prospective clients enough clarity to feel confident booking a consultation.</li>
+        <li><strong>Turn visitors into consultation bookings or newsletter subscribers</strong>.</li>
+      </ul>
+      <h3>Who you are (and how you work)</h3>
+      <p>Small expert team (4 people), with deep experience and <strong>long-term, personal relationships</strong> with clients. Not “just interior decorators”, but <strong>human-centric</strong> interior architects, grounded in <strong>psychology, light, circadian rhythm, and biophilic design</strong>, focused on <strong>measurable business outcomes</strong>. You value <strong>timeless, architectural, editorial aesthetics</strong>, white space, subtle structure, and a <strong>collaborative, reference-driven design process</strong>.</p>
+      <h3>Segments you serve</h3>
+      <ul>
+        <li><strong>Healthcare</strong> — Dental & Healthcare clinics, beauty/medical clinics, hospitals, hair implant clinics.</li>
+        <li><strong>Workspaces</strong> — Commercial offices, co-working, hybrid hubs (typically 2000+ sq.ft).</li>
+        <li><strong>Homes</strong> — High-end, wellness-focused residential (initially a soft launch).</li>
+      </ul>
+      <p>These are <strong>segments</strong>, not separate businesses. The new site will let each type of visitor <strong>see themselves quickly</strong>, without three parallel site structures.</p>
+    </section>
+
+    <section class="container">
+      <h2>3. Information architecture</h2>
+      <p>A <strong>lean, segment-aware IA</strong> will form the foundation of the redesign.</p>
+      <h3>Top-level navigation</h3>
+      <ul>
+        <li><strong>Home</strong></li>
+        <li><strong>Work</strong> (portfolio, clients, videos)</li>
+        <li><strong>Services</strong> (process, steps, options)</li>
+        <li><strong>Academy</strong> (content hub: articles, guides, calculators)</li>
+        <li><strong>About</strong> (who we are, how we work, values)</li>
+      </ul>
+      <p><strong>Contact</strong> remains a dedicated page, reached via CTAs and the footer, not as a main nav item.</p>
+      <h3>Segments as filters (not extra pages)</h3>
+      <p><strong>Healthcare</strong> · <strong>Workspaces</strong> · <strong>Homes</strong> appear as three choices in the Home hero and as filters on Work and Services. One Services page; segments <strong>re-focus content</strong>, not multiply pages.</p>
+    </section>
+
+    <section class="container">
+      <h2>4. Page roles and proposed changes</h2>
+      <h3>Home</h3>
+      <p>Segment hero (Healthcare · Workspaces · Homes). Awards and trust integrated into hero. Specialism simplified; testimonials remodelled mobile-first. 3-step process simplified or replaced by “How we work” link into About.</p>
+      <h3>Work</h3>
+      <p>Single Work page with segment filters and tags. Each project: large imagery, white space, short outcome-focused description, short testimonial quote with link to full. Clients section: 15× 5-star reviews, logos, editorial layout.</p>
+      <h3>Services</h3>
+      <p>One Services page: First Steps → Design → Build & Aftercare; segment filter drives examples and calculator CTA. “Click into three options per stage” removed or simplified. 4 key elements and before/after moved into About and Work.</p>
+      <h3>Academy</h3>
+      <p>Articles, Guides & Checklists, Tools (calculators) in one editorial-style hub. Filters by content type and optionally segment. Large white-space layouts, strong typography.</p>
+      <h3>About</h3>
+      <p>One About page: Our Why, How We Work, 4 Key Elements, Team & Story, micro-testimonials and awards. Testimonials page linked from About, Work, footer.</p>
+    </section>
+
+    <section class="container">
+      <h2>5. Design language & interaction</h2>
+      <p><strong>Keep:</strong> White space, gallery feel, calm architecture-forward mood; gradients and accents where they support hierarchy.</p>
+      <p><strong>Elevate:</strong> Scannable typography; big white text over imagery with careful overlays; sparing micro-interactions.</p>
+      <p><strong>Avoid:</strong> Boxy sectioning; overuse of accordions and click-to-reveal patterns.</p>
+    </section>
+
+    <section class="container">
+      <h2>6. Process & collaboration (4–6 weeks)</h2>
+      <p>Each phase concludes with your sign-off before the next begins. You can stop after any phase and keep all deliverables produced to that point.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Duration</th>
+              <th>Deliverables</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Discovery & IA confirmation</strong></td>
+              <td>Week 1</td>
+              <td>Walkthrough of IA. Review of references. Signed-off sitemap and key page list.</td>
+            </tr>
+            <tr>
+              <td><strong>2. UX flows & wireframes</strong></td>
+              <td>Weeks 2–3</td>
+              <td>Low-fidelity wireframes for all key pages. 1–2 review sessions. Approved wireframe set.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Visual design in Figma</strong></td>
+              <td>Weeks 3–5</td>
+              <td>Design language applied to all templates. Component library. Approved high-fidelity Figma file (desktop + mobile).</td>
+            </tr>
+            <tr>
+              <td><strong>4. Refinement & Webflow handoff</strong></td>
+              <td>Week 5–6</td>
+              <td>Final polish. Handoff documentation for Webflow. Optional light support during implementation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>7. Investment & payment schedule</h2>
+      <p>All amounts in <strong>GBP (£)</strong>. Payment is due upon approval of each phase’s deliverables. If you stop after any phase, you keep all deliverables produced to that point; no further payment is due.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Deliverable</th>
+              <th>Price (GBP)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Discovery & IA confirmation</strong></td>
+              <td>Signed-off IA, sitemap, key page list</td>
+              <td class="price">£360</td>
+            </tr>
+            <tr>
+              <td><strong>2. UX flows & wireframes</strong></td>
+              <td>Approved wireframe set (all key pages)</td>
+              <td class="price">£1,080</td>
+            </tr>
+            <tr>
+              <td><strong>3. Visual design in Figma</strong></td>
+              <td>Approved high-fidelity designs (desktop + mobile), component library</td>
+              <td class="price">£1,800</td>
+            </tr>
+            <tr>
+              <td><strong>4. Refinement & Webflow handoff</strong></td>
+              <td>Final Figma file, handoff documentation</td>
+              <td class="price">£360</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2"><strong>Total</strong></td>
+              <td class="price">£3,600</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Payment schedule:</strong> Phase 1 £360 · Phase 2 £1,080 · Phase 3 £1,800 · Phase 4 £360 (each due on approval of that phase’s deliverables).</p>
+      <p>Stopping after Phase 1: £360 total. After Phase 2: £1,440 total. After Phase 3: £3,240 total. Completing all phases: £3,600 total.</p>
+    </section>
+
+    <section class="container">
+      <h2>8. Next steps</h2>
+      <p>Confirm acceptance of this proposal. Schedule the Discovery & IA confirmation kick-off (Week 1). Agree contract and payment terms for Phase 1; subsequent phases can be confirmed at each milestone. Scope, timeline, or pricing can be revised before starting.</p>
+    </section>
+
+    <section class="container cta">
+      <div class="cta-inner">
+        <p><strong>Responding to this proposal</strong></p>
+        <p>You can respond simply by <strong>replying to the email</strong> with which you received this link. No forms or extra steps required.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>Proposal prepared for Remarcable Design · Website Redesign 2026</p>
+  </footer>
+</body>
+</html>
