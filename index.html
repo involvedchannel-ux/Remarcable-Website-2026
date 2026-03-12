@@ -10,9 +10,10 @@
   <style>
     :root {
       --bg: #fff;
-      --text: #111;
-      --text-muted: #444;
-      --line: #ddd;
+      --text: #12385E;
+      --text-muted: #4a657a;
+      --highlight: #236499;
+      --line: #d4dce4;
       --max-width: 52rem;
     }
 
@@ -21,7 +22,7 @@
     *::after { box-sizing: border-box; }
 
     html {
-      font-size: 18px;
+      font-size: 15px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -43,7 +44,7 @@
 
     /* Header */
     header {
-      padding: 3rem 0 2rem;
+      padding: 2.5rem 0 2rem;
       border-bottom: 1px solid var(--line);
     }
 
@@ -51,7 +52,8 @@
       display: block;
       height: 2.5rem;
       width: auto;
-      margin-bottom: 2rem;
+      margin: 0 0 2rem;
+      padding-top: 1.5rem;
     }
 
     h1 {
@@ -60,6 +62,7 @@
       letter-spacing: -0.02em;
       margin: 0 0 0.5rem;
       line-height: 1.2;
+      color: var(--text);
     }
 
     .subtitle {
@@ -71,11 +74,25 @@
 
     /* Sections */
     section {
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--line);
+      padding: 2.5rem 0 0;
+      margin-top: 0;
     }
 
-    section:last-of-type { border-bottom: none; }
+    section::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: var(--line);
+      margin: 2rem 0 0;
+      padding-top: 0;
+    }
+
+    section:last-of-type::after,
+    section.cta::after { display: none; }
+
+    section .container {
+      padding-bottom: 0;
+    }
 
     h2 {
       font-size: 1rem;
@@ -84,12 +101,16 @@
       text-transform: uppercase;
       color: var(--text);
       margin: 0 0 1.25rem;
+      padding-top: 1.25rem;
     }
+
+    section:first-of-type h2 { padding-top: 0; }
 
     h3 {
       font-size: 1.125rem;
       font-weight: 600;
       margin: 1.75rem 0 0.5rem;
+      color: var(--text);
     }
 
     h3:first-child { margin-top: 0; }
@@ -112,7 +133,10 @@
 
     li:last-child { margin-bottom: 0; }
 
-    strong { font-weight: 600; }
+    strong {
+      font-weight: 600;
+      color: var(--highlight);
+    }
 
     /* Tables */
     .table-wrap {
@@ -147,11 +171,16 @@
 
     .total-row td { padding-top: 1rem; font-weight: 600; color: var(--text); }
 
+    table strong { color: var(--highlight); }
+
     /* CTA / Quote */
     .cta {
       padding: 2.5rem 0 3rem;
+      margin-top: 0;
       border-top: 1px solid var(--line);
     }
+
+    .cta .container { padding-top: 2rem; }
 
     .cta-inner {
       padding: 1.75rem 1.5rem;
@@ -168,7 +197,7 @@
 
     .cta p + p { margin-top: 0.75rem; }
 
-    .cta strong { font-weight: 600; }
+    .cta strong { font-weight: 600; color: inherit; }
 
     /* Footer */
     footer {
@@ -180,9 +209,12 @@
     footer p { margin: 0; }
 
     @media (max-width: 640px) {
-      html { font-size: 16px; }
+      html { font-size: 15px; }
       header { padding: 2rem 0 1.5rem; }
-      section { padding: 1.75rem 0; }
+      .logo { padding-top: 1.25rem; }
+      section { padding: 1.75rem 0 0; }
+      section::after { margin-top: 1.5rem; }
+      h2 { padding-top: 1rem; }
       th, td { padding-right: 0.5rem; font-size: 0.875rem; }
     }
   </style>
@@ -211,17 +243,17 @@
       <h3>Website purpose</h3>
       <ul>
         <li>Serve as a <strong>calm, premium gallery</strong> of your work and philosophy.</li>
-        <li><strong>Nurture leads</strong>: keep Remarcable top-of-mind through content (blog, guides, tools).</li>
-        <li><strong>Support decision-making</strong>: give prospective clients enough clarity to feel confident booking a consultation.</li>
+        <li><strong>Nurture leads</strong>: keep Remarcable top-of-mind through content (blog, guides, tools) even when visitors are not yet ready to start a project.</li>
+        <li><strong>Support decision-making</strong>: give prospective clients enough clarity on <strong>what you do, how you work, and what results you create</strong> to feel confident booking a consultation.</li>
         <li><strong>Turn visitors into consultation bookings or newsletter subscribers</strong>.</li>
       </ul>
       <h3>Who you are (and how you work)</h3>
-      <p>Small expert team (4 people), with deep experience and <strong>long-term, personal relationships</strong> with clients. Not “just interior decorators”, but <strong>human-centric</strong> interior architects, grounded in <strong>psychology, light, circadian rhythm, and biophilic design</strong>, focused on <strong>measurable business outcomes</strong>. You value <strong>timeless, architectural, editorial aesthetics</strong>, white space, subtle structure, and a <strong>collaborative, reference-driven design process</strong>.</p>
+      <p>Small expert team (4 people), with deep experience and <strong>long-term, personal relationships</strong> with clients. Not “just interior decorators”, but <strong>human-centric</strong> interior architects, grounded in <strong>psychology, light, circadian rhythm, and biophilic design</strong>, focused on <strong>measurable business outcomes</strong> (patient experience, productivity, growth, brand perception). You value <strong>timeless, architectural, editorial aesthetics</strong>, white space, subtle structure (not boxy “section blocks”), and a <strong>collaborative, reference-driven design process</strong>.</p>
       <h3>Segments you serve</h3>
       <ul>
-        <li><strong>Healthcare</strong> — Dental & Healthcare clinics, beauty/medical clinics, hospitals, hair implant clinics.</li>
-        <li><strong>Workspaces</strong> — Commercial offices, co-working, hybrid hubs (typically 2000+ sq.ft).</li>
-        <li><strong>Homes</strong> — High-end, wellness-focused residential (initially a soft launch).</li>
+        <li><strong>Healthcare</strong> (Dental & Healthcare clinics, beauty/medical clinics, hospitals, hair implant clinics, etc.).</li>
+        <li><strong>Workspaces</strong> (commercial offices, co-working, hybrid hubs – typically 2000+ sq.ft).</li>
+        <li><strong>Homes</strong> (high-end, wellness-focused residential; initially a soft launch).</li>
       </ul>
       <p>These are <strong>segments</strong>, not separate businesses. The new site will let each type of visitor <strong>see themselves quickly</strong>, without three parallel site structures.</p>
     </section>
@@ -237,35 +269,35 @@
         <li><strong>Academy</strong> (content hub: articles, guides, calculators)</li>
         <li><strong>About</strong> (who we are, how we work, values)</li>
       </ul>
-      <p><strong>Contact</strong> remains a dedicated page, reached via CTAs and the footer, not as a main nav item.</p>
+      <p><strong>Contact</strong> remains a dedicated page, reached via <strong>CTAs</strong> (“Book your consultation”, “Talk to us about your space”) and the <strong>footer</strong>, not as a main nav item.</p>
       <h3>Segments as filters (not extra pages)</h3>
-      <p><strong>Healthcare</strong> · <strong>Workspaces</strong> · <strong>Homes</strong> appear as three choices in the Home hero and as filters on Work and Services. One Services page; segments <strong>re-focus content</strong>, not multiply pages.</p>
+      <p><strong>Healthcare</strong> (Dental & Healthcare) · <strong>Workspaces</strong> (Commercial) · <strong>Homes</strong> (Residential) appear as <strong>three choices in the Home hero</strong> and as <strong>filters on Work and Services</strong> (and optionally Academy). One Services page; segments <strong>re-focus content</strong>, not multiply pages.</p>
     </section>
 
     <section class="container">
       <h2>4. Page roles and proposed changes</h2>
-      <h3>Home</h3>
-      <p>Segment hero (Healthcare · Workspaces · Homes). Awards and trust integrated into hero. Specialism simplified; testimonials remodelled mobile-first. 3-step process simplified or replaced by “How we work” link into About.</p>
-      <h3>Work</h3>
-      <p>Single Work page with segment filters and tags. Each project: large imagery, white space, short outcome-focused description, short testimonial quote with link to full. Clients section: 15× 5-star reviews, logos, editorial layout.</p>
-      <h3>Services</h3>
-      <p>One Services page: First Steps → Design → Build & Aftercare; segment filter drives examples and calculator CTA. “Click into three options per stage” removed or simplified. 4 key elements and before/after moved into About and Work.</p>
-      <h3>Academy</h3>
-      <p>Articles, Guides & Checklists, Tools (calculators) in one editorial-style hub. Filters by content type and optionally segment. Large white-space layouts, strong typography.</p>
-      <h3>About</h3>
-      <p>One About page: Our Why, How We Work, 4 Key Elements, Team & Story, micro-testimonials and awards. Testimonials page linked from About, Work, footer.</p>
+      <h3>Home – gallery-like front door</h3>
+      <p><strong>Segment hero</strong>: Healthcare · Workspaces · Homes; choosing one sets a segment filter for the session. <strong>Awards and trust</strong> integrated into hero/composition. <strong>Specialism</strong> simplified; <strong>testimonials preview</strong> remodelled <strong>mobile-first</strong>. <strong>3-step process</strong> simplified or replaced by a clear “How we work” link into About.</p>
+      <h3>Work – portfolio with meaningful filters</h3>
+      <p>Single <strong>Work</strong> page with <strong>segment filters</strong> and <strong>tags</strong>. Each project: large imagery, white space, short outcome-focused description, short testimonial quote with link to full. <strong>Clients section</strong> reworked: 15× 5-star reviews, logos, editorial layout.</p>
+      <h3>Services – one clear story</h3>
+      <p>One <strong>Services</strong> page: <strong>First Steps → Design → Build & Aftercare</strong>; segment filter drives examples and calculator CTA. “Click into three options per stage” removed or simplified. <strong>4 key elements</strong> and <strong>before/after</strong> moved into About and Work.</p>
+      <h3>Academy – elevated content hub</h3>
+      <p><strong>Academy</strong> hub: <strong>Articles</strong>, <strong>Guides & Checklists</strong>, <strong>Tools (calculators)</strong> in one editorial-style experience, with filters by content type and optionally segment. Large white-space layouts, strong typography.</p>
+      <h3>About – who you are, why you exist, how you work</h3>
+      <p>One <strong>About</strong> page: <strong>Our Why</strong>, <strong>How We Work</strong>, <strong>4 Key Elements</strong>, <strong>Team & Story</strong>, micro-testimonials and awards. <strong>Testimonials</strong> page linked from About, Work, footer.</p>
     </section>
 
     <section class="container">
       <h2>5. Design language & interaction</h2>
-      <p><strong>Keep:</strong> White space, gallery feel, calm architecture-forward mood; gradients and accents where they support hierarchy.</p>
-      <p><strong>Elevate:</strong> Scannable typography; big white text over imagery with careful overlays; sparing micro-interactions.</p>
+      <p><strong>Keep:</strong> White space, gallery feel, calm architecture-forward mood; gradients and accents (e.g. purple/blue hover) where they support hierarchy.</p>
+      <p><strong>Elevate:</strong> Scannable typography (shorter paragraphs, clearer headings); big white text over imagery with careful overlays; sparing micro-interactions (hover dots, tooltips, transitions).</p>
       <p><strong>Avoid:</strong> Boxy sectioning; overuse of accordions and click-to-reveal patterns.</p>
     </section>
 
     <section class="container">
       <h2>6. Process & collaboration (4–6 weeks)</h2>
-      <p>Each phase concludes with your sign-off before the next begins. You can stop after any phase and keep all deliverables produced to that point.</p>
+      <p>A <strong>4–6 week, iterative process</strong> with clear phases and deliverables. Each phase concludes with your sign-off before the next begins. You can stop after any phase and keep all deliverables produced to that point.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -279,31 +311,32 @@
             <tr>
               <td><strong>1. Discovery & IA confirmation</strong></td>
               <td>Week 1</td>
-              <td>Walkthrough of IA. Review of references. Signed-off sitemap and key page list.</td>
+              <td>Walkthrough of IA (Home, Work, Services, Academy, About + segments). Review of references (Benjamin Hardman, BoConcept, Richard Oxford, Sophie Paterson, etc.). <strong>Signed-off sitemap and key page list.</strong></td>
             </tr>
             <tr>
               <td><strong>2. UX flows & wireframes</strong></td>
               <td>Weeks 2–3</td>
-              <td>Low-fidelity wireframes for all key pages. 1–2 review sessions. Approved wireframe set.</td>
+              <td>Low-fidelity wireframes for Home, Work (index + case study), Services, Academy (hub + article), About, Contact. Focus on storytelling order, segment filters, CTAs, trust elements. <strong>1–2 review sessions.</strong> <strong>Approved wireframe set.</strong></td>
             </tr>
             <tr>
-              <td><strong>3. Visual design in Figma</strong></td>
+              <td><strong>3. Visual design in Figma (desktop + mobile)</strong></td>
               <td>Weeks 3–5</td>
-              <td>Design language applied to all templates. Component library. Approved high-fidelity Figma file (desktop + mobile).</td>
+              <td>Design language applied to all key templates. Component library (headers, footers, cards, filters, testimonial blocks). Iterative feedback on layout, typography, interactions. <strong>Approved high-fidelity Figma file (desktop + mobile).</strong></td>
             </tr>
             <tr>
               <td><strong>4. Refinement & Webflow handoff</strong></td>
               <td>Week 5–6</td>
-              <td>Final polish. Handoff documentation for Webflow. Optional light support during implementation.</td>
+              <td>Final polish on all screens. <strong>Handoff documentation</strong> for Webflow (styles, components, interaction notes). Optional: light support during implementation.</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p>Throughout: your <strong>design eye and references</strong> are part of the process; layouts stay <strong>continuous and editorial</strong>, not boxy; decisions stay aligned with <strong>nurturing and converting the right leads</strong> while remaining unmistakably Remarcable.</p>
     </section>
 
     <section class="container">
       <h2>7. Investment & payment schedule</h2>
-      <p>All amounts in <strong>GBP (£)</strong>. Payment is due upon approval of each phase’s deliverables. If you stop after any phase, you keep all deliverables produced to that point; no further payment is due.</p>
+      <p>All amounts in <strong>GBP (£)</strong>. Payment is due upon approval of each phase’s deliverables. If you choose to stop after any phase, you keep all deliverables produced to that point; no further payment is due.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -341,19 +374,30 @@
           </tbody>
         </table>
       </div>
-      <p><strong>Payment schedule:</strong> Phase 1 £360 · Phase 2 £1,080 · Phase 3 £1,800 · Phase 4 £360 (each due on approval of that phase’s deliverables).</p>
-      <p>Stopping after Phase 1: £360 total. After Phase 2: £1,440 total. After Phase 3: £3,240 total. Completing all phases: £3,600 total.</p>
+      <p><strong>Payment schedule</strong></p>
+      <ul>
+        <li>Phase 1: £360 — due on approval of IA and sitemap.</li>
+        <li>Phase 2: £1,080 — due on approval of wireframes.</li>
+        <li>Phase 3: £1,800 — due on approval of high-fidelity designs.</li>
+        <li>Phase 4: £360 — due on delivery of final files and handoff documentation.</li>
+      </ul>
+      <p>Stopping after Phase 1: total investment £360. After Phase 2: £1,440 total. After Phase 3: £3,240 total. Completing all phases: £3,600 total.</p>
     </section>
 
     <section class="container">
       <h2>8. Next steps</h2>
-      <p>Confirm acceptance of this proposal. Schedule the Discovery & IA confirmation kick-off (Week 1). Agree contract and payment terms for Phase 1; subsequent phases can be confirmed at each milestone. Scope, timeline, or pricing can be revised before starting.</p>
+      <p>To proceed:</p>
+      <ol>
+        <li>Confirm acceptance of this proposal (scope, process, and investment).</li>
+        <li>Agree contract and payment terms for Phase 1; subsequent phases can be confirmed at each milestone.</li>
+      </ol>
+      <p>If you would like to adjust scope, timeline, or pricing, we can revise this proposal before starting.</p>
     </section>
 
     <section class="container cta">
       <div class="cta-inner">
         <p><strong>Responding to this proposal</strong></p>
-        <p>You can respond simply by <strong>replying to the email</strong> with which you received this link. No forms or extra steps required.</p>
+        <p>You can respond to this proposal simply by <strong>replying to the email</strong> with which you received the link. No forms or extra steps required.</p>
       </div>
     </section>
   </main>
