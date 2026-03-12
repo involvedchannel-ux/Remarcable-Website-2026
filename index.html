@@ -50,7 +50,7 @@
 
     .logo {
       display: block;
-      height: 2.5rem;
+      height: 3.25rem;
       width: auto;
       margin: 0 0 2rem;
       padding-top: 1.5rem;
@@ -78,6 +78,10 @@
       margin-top: 0;
     }
 
+    main > section:first-child {
+      padding-top: 2.75rem;
+    }
+
     section::after {
       content: '';
       display: block;
@@ -95,7 +99,7 @@
     }
 
     h2 {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -104,7 +108,7 @@
       padding-top: 1.25rem;
     }
 
-    section:first-of-type h2 { padding-top: 0; }
+    section.no-divider::after { display: none; }
 
     h3 {
       font-size: 1.125rem;
@@ -211,10 +215,11 @@
     @media (max-width: 640px) {
       html { font-size: 15px; }
       header { padding: 2rem 0 1.5rem; }
-      .logo { padding-top: 1.25rem; }
+      .logo { height: 3rem; padding-top: 1.25rem; }
+      main > section:first-child { padding-top: 2rem; }
       section { padding: 1.75rem 0 0; }
       section::after { margin-top: 1.5rem; }
-      h2 { padding-top: 1rem; }
+      h2 { font-size: 1.1rem; padding-top: 1rem; }
       th, td { padding-right: 0.5rem; font-size: 0.875rem; }
     }
   </style>
@@ -412,10 +417,9 @@
         <li>Phase 3: £1,800 — due on approval of high-fidelity designs.</li>
         <li>Phase 4: £360 — due on delivery of final files and handoff documentation.</li>
       </ul>
-      <p>Stopping after Phase 1: total investment £360. After Phase 2: £1,440 total. After Phase 3: £3,240 total. Completing all phases: £3,600 total.</p>
     </section>
 
-    <section class="container">
+    <section class="container no-divider">
       <h2>8. Next steps</h2>
       <p>To proceed:</p>
       <ol>
